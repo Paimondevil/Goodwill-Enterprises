@@ -11,6 +11,7 @@
 
   h1 {
     font-size: 100px;
+    color:antiquewhite;
 
     @include mobile {
       font-size: 72px;
@@ -45,7 +46,7 @@
     }
   }
   .stars {
-    background-image: url("/stars.png");
+    background-image: url("/clouds.png");
     background-size: cover;
     background-position: bottom;
     width: 100%;

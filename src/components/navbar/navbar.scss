@@ -6,10 +6,15 @@
   .wrapper {
     max-width: 1366px;
     margin: auto;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0);
+}
+
 
     @include mobile {
       justify-content: flex-end;
@@ -24,13 +29,42 @@
       }
     }
 
-    .social {
-      display: flex;
-      gap: 20px;
+     .checkmeout {
+      margin-left: 990px; // space between MENU and check me out
+      font-weight: bold;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      text-transform: none; // or 'uppercase' if you want uppercase here as well
+      cursor: default;      // pointer only on links, not text
+      color: #000000;
+      
+      @include mobile {
+        display: none;
+      }
+    }
 
-      img {
-        width: 18px;
-        height: 18px;
+    .social {
+    display: flex;
+    gap: 20px;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px; /* rounded corners */
+      cursor: pointer;
+      background: linear-gradient(145deg, #ab65d400, #d9b5ee00);
+      box-shadow:
+        inset 2px 2px 4px rgba(255, 255, 255, 0),
+        inset -2px -2px 4px rgba(0, 0, 0, 0),
+        0 4px 8px rgba(0, 0, 0, 0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow:
+          inset 1px 1px 3px rgba(255, 255, 255, 0.2),
+          inset -1px -1px 3px rgba(0, 0, 0, 0.3),
+          0 6px 12px rgba(0, 0, 0, 0.4);
       }
     }
   }

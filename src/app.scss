@@ -11,8 +11,8 @@ html {
 }
 
 body {
-  background-color: #0c0c1d;
-  color: lightgray;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #0c0c1d;
 }
 
 a {
@@ -26,6 +26,34 @@ section {
   scroll-snap-align: center;
   overflow: hidden;
 }
+
+/* → THIS IS YOUR UPDATED BLOCK ← */
+.app-background {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* 
+  We use ::before to paint the background image.
+  Because opacity is < 1, it will look "faded" behind your content.
+*/
+.app-background::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.3; /* ← 0 = invisible, 1 = fully opaque. Tweak as needed */
+  z-index: -1;   /* sit this layer *behind* all your sections/content */
+}
+
 
 @mixin mobile {
   @media (max-width: 738px) {

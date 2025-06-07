@@ -3,7 +3,7 @@
 .hero {
   height: calc(100vh - 100px);
   overflow: hidden;
-  background: linear-gradient(180deg, #0c0c1d, #111132);
+  background-color: rgba(255, 255, 255, 0);
   position: relative;
 
   .wrapper {
@@ -28,31 +28,46 @@
       }
 
       h2 {
-        font-size: 30px;
-        color: rebeccapurple;
-        letter-spacing: 10px;
-      }
-
-      h1 {
-        font-size: 88px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        letter-spacing: 6px;
+        /* CMYK rainbow gradient for print-vibe */
+        background: linear-gradient(
+          90deg,
+          #00aeef 0%,   /* Cyan  */
+          #ed008c 25%,  /* Magenta */
+          #03fff7 50%,  /* Yellow */
+          #252424 75%,  /* Black  */
+          #00aeef 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 
         @include mobile {
-          font-size: 36px;
+          font-size: 20px;
+          letter-spacing: 3px;
         }
       }
 
-      .buttons {
-        button {
-          padding: 20px;
-          border: 1px solid white;
-          border-radius: 10px;
-          background-color: transparent;
-          color: white;
-          margin-right: 20px;
-          cursor: pointer;
-          font-weight: 300;
-        }
+     h1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 88px;
+      line-height: 1.05;
+      /* Smooth two-tone gradient for emphasis */
+      background: linear-gradient(135deg, #ff7ad3 0%, #8dd6ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+      @include mobile {
+        font-size: 38px;
       }
+    }
+
+      
 
       img {
         width: 50px;
@@ -74,19 +89,47 @@
     }
 
     img{
-      width: 100%;
-      height: 100%;
+      width: 75%;
+      height: 67%;
       object-fit: cover;
     }
   }
 
-  .slidingTextContainer {
-    position: absolute;
-    font-size: 50vh;
-    bottom: -120px;
-    white-space: nowrap;
-    color: #ffffff09;
-    width: 50%;
-    font-weight: bold;
-  }
+   
+    .slidingTextContainer {
+  position: absolute;
+  font-size: 25vh;
+  bottom: -50px;
+  white-space: nowrap;
+  width: 400%;
+  font-weight: 900;
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  user-select: none;
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.2) 0%,
+    rgba(255, 154, 0, 0.2) 10%,
+    rgba(208, 222, 33, 0.2) 20%,
+    rgba(79, 220, 74, 0.2) 30%,
+    rgba(63, 218, 216, 0.2) 40%,
+    rgba(47, 201, 226, 0.2) 50%,
+    rgba(28, 127, 238, 0.2) 60%,
+    rgba(95, 21, 242, 0.2) 70%,
+    rgba(186, 12, 248, 0.2) 80%,
+    rgba(251, 7, 217, 0.2) 90%,
+    rgba(255, 0, 0, 0.2) 100%
+  );
+
+  background-size: 20% 100%; /* Tighter repetition for individual letter coloring */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent
+}
+
+
 }

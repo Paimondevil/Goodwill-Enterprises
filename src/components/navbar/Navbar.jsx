@@ -6,27 +6,32 @@ const Navbar = () => {
   return (
     <div className="navbar">
       {/* Sidebar */}
-      <Sidebar/>
+      <Sidebar />
       <div className="wrapper">
         <motion.span
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          Lama Dev
+          MENU
         </motion.span>
+
+        {/* New 'Check me out' text */}
+        <motion.span
+          className="checkmeout"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          GET IN TOUCH!
+        </motion.span>
+
         <div className="social">
-          <a href="#">
-            <img src="/facebook.png" alt="" />
+          <a href="mailto:29deveshgautam@gmail.com">
+            <img src="message.png" alt="Email" />
           </a>
-          <a href="#">
-            <img src="/instagram.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="/youtube.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="/dribbble.png" alt="" />
+          <a href="tel:+19023382913">
+            <img src="phone.png" alt="Phone" />
           </a>
         </div>
       </div>
