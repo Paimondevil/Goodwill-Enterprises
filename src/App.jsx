@@ -11,26 +11,28 @@ import Services from "./components/services/Services";
 const App = () => {
   return (
     <div className="app-background">
-  <Cursor />
-  <section id="Homepage">
-    <Navbar />
-    <Hero />
-  </section>
-  <section id="Services">
-    <Parallax type="services" />
-  </section>
-  <section>
-    <Services />
-  </section>
-  <section id="Portfolio">
-    <Parallax type="portfolio" />
-  </section>
-  <Portfolio />
-  <section id="Contact">
-    <Contact />
-  </section>
-  {/* <Test/> */}
-</div>
+      <Cursor />
+      <section id="Homepage">
+        <Navbar />
+        <Hero />
+      </section>
+      <section id="Services">
+        <Parallax type="services" />
+      </section>
+      <section>
+        <Services />
+      </section>
+      <section id="Portfolio">
+        <Parallax type="portfolio" />
+      </section>
+      <Portfolio />
+      <section id="Contact">
+        <Contact />
+      </section>
+      {/* Framer Motion Crash Course */}
+      {/* <Test/>
+    <Test/> */}
+    </div>
   );
 };
 
