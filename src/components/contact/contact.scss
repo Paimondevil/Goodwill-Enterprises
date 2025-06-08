@@ -1,12 +1,25 @@
 @import "../../app.scss";
 
 .contact {
+  position: relative;
   height: 100%;
   max-width: 1366px;
   margin: auto;
   display: flex;
   align-items: center;
   gap: 50px;
+
+  background: url("color.png") center center no-repeat;
+  background-size: cover;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); // white translucent overlay
+    z-index: -1;
+  }
 
   @include mobile {
     width: 100%;
@@ -52,7 +65,7 @@
 
 
     .phoneSvg {
-      stroke: orange;
+      stroke: rgb(255, 145, 0);
       position: absolute;
       margin: auto;
       z-index: -1;
@@ -67,8 +80,8 @@
       textarea {
         padding: 20px;
         background-color: transparent;
-        border: 1px solid white;
-        color: white;
+        border: 1px solid rgb(0, 0, 0);
+        color: rgb(0, 0, 0);
         border-radius: 5px;
 
         @include mobile {

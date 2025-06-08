@@ -5,29 +5,38 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 const items = [
   {
     id: 1,
-    title: "React Commerce",
-    img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    title: "Business Printing",
+    client: "Supertech Pvt. Ltd.",
+    img: "...",
+    desc: "We were genuinely impressed with the quality and creativity delivered by Goodwill Enterprises. From banners to notepads and letterheads, every detail was handled with professionalism and care. We highly recommend them.",
+    rating: 5,
   },
   {
     id: 2,
-    title: "Next.js Blog",
-    img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    title: "School & Office Supplies",
+    client: "Lovely Public Sr. Sec. School",
+    img: "...",
+    desc: "The precision and punctuality of Goodwill Enterprises impressed us deeply. The quality of our customized books and diaries is outstanding. Their design team truly understands educational branding.",
+    rating: 4.5,
   },
   {
     id: 3,
-    title: "Vanilla JS App",
-    img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    title: "Promotional & Packaging",
+    client: "Takemori (UK)",
+    img: "...",
+    desc: "We ordered visiting cards internationally, and were delighted by the result. Fast delivery, excellent quality, and a seamless experience — we’ll definitely continue working with them.",
+    rating: 5,
   },
   {
     id: 4,
-    title: "Music App",
-    img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    title: "Banners & More",
+    client: "South Zone Restaurant",
+    img: "...",
+    desc: "We’re regulars! From menu cards to LED boards and flex banners, everything was well-designed and on point. Highly recommended for consistent quality and service.",
+    rating: 5,
   },
 ];
+
 
 const Single = ({ item }) => {
   const ref = useRef();
@@ -45,10 +54,25 @@ const Single = ({ item }) => {
           <div className="imageContainer" ref={ref}>
             <img src={item.img} alt="" />
           </div>
-          <motion.div className="textContainer" style={{y}}>
-            <h2>{item.title}</h2>
-            <p>{item.desc}</p>
-            <button>See Demo</button>
+          <motion.div className="textContainer" style={{ y }}>
+            <h2><u>{item.title}</u></h2>
+            <p style={{ fontWeight: "bold", fontSize: "18px" }}>⭐ {item.client}</p>
+            <p style={{ marginTop: "5px" }}>{item.desc}</p>
+
+            {(() => {
+              const fullStars = Math.floor(item.rating);
+              const hasHalfStar = item.rating % 1 >= 0.25 && item.rating % 1 <= 0.75;
+              const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+              const full = "★".repeat(fullStars);
+              const half = hasHalfStar ? "⯨" : ""; // Your preferred half star symbol
+              const empty = "☆".repeat(emptyStars);
+              
+              return (
+                <p style={{ marginTop: "10px", fontStyle: "italic" }}>
+                  Rating ({item.rating}/5): {full}{half}{empty}
+                </p>
+              );
+            })()}
           </motion.div>
         </div>
       </div>
