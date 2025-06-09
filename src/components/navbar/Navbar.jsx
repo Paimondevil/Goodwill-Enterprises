@@ -27,10 +27,10 @@ const Navbar = () => {
         </motion.span>
 
         <div className="social">
-          <a href="mailto:29deveshgautam@gmail.com">
+          <a href="mailto:team.goodwill.enterprises@gmail.com">
             <img src="message.png" alt="Email" />
           </a>
-          <a href="tel:+19023382913">
+          <a href="tel:+919810590947">
             <img src="phone.png" alt="Phone" />
           </a>
         </div>
