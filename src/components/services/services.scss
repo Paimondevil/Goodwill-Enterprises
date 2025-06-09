@@ -81,7 +81,7 @@
       button {
         width: 300px;
         height: 100px;
-        border-radius: 50px;
+        border-radius: 400px;
         background-color: orange;
         border: none;
         font-size: 24px;
@@ -112,6 +112,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      align-items: center;
 
       @include mobile {
         border: none;
@@ -127,12 +128,13 @@
       }
 
       button {
-        padding: 10px;
+        padding: 15px;
         background-color: orange;
         border: none;
         cursor: pointer;
         color: rgb(0, 0, 0); // Ensures good contrast on hover
         transition: background-color 0.3s ease, color 0.3s ease;
+        border-radius: 50px;
 
         &:hover {
           background-color: rgb(18, 28, 150); // royal blue

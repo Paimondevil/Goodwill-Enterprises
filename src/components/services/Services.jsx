@@ -61,7 +61,7 @@ const Services = () => {
           <p style={{ fontWeight: "bold", fontSize: "1.1rem" }}>Brochures, Letterheads, Visiting Cards, Handbills.</p><br />
           Give your brand a polished look with high-quality multicolour prints that make a lasting impression — from eye-catching brochures to sharp, professional cards.
         </p><br />
-        <button>Go</button>
+        <a href="#portfolio-1"><button>View Similar Work</button></a>
       </motion.div>
 
       <motion.div className="box" whileHover={{ background: "lightgray", color: "black" }}>
@@ -70,7 +70,7 @@ const Services = () => {
           <p style={{ fontWeight: "bold", fontSize: "1.1rem" }}>Registers, Diaries, Stationery, Custom School Materials.</p><br />
           We print everything schools and offices need — from daily-use registers and school diaries to custom-branded stationery for smooth operations.
         </p><br />
-        <button>Go</button>
+        <a href="#portfolio-2"><button>View Similar Work</button></a>
       </motion.div>
 
       <motion.div className="box" whileHover={{ background: "lightgray", color: "black" }}>
@@ -79,7 +79,7 @@ const Services = () => {
           <p style={{ fontWeight: "bold", fontSize: "1.1rem" }}>Stickers, Carry Bags, KNPO Forms.</p><br />
           Spread your brand effortlessly with printed carry bags, labels, and stickers — or streamline business with custom KNPO and packaging solutions.
         </p><br />
-        <button>Go</button>
+        <a href="#portfolio-3"><button>View Similar Work</button></a>
       </motion.div>
 
       <motion.div className="box" whileHover={{ background: "lightgray", color: "black" }}>
@@ -90,7 +90,7 @@ const Services = () => {
           <br />
           <span style={{ fontWeight: "bold", fontSize: "0.8rem" }}><i>And yes — we do all types of printing jobs. Just ask!</i></span>
         </p><br />
-        <button>Go</button>
+        <a href="#portfolio-4"><button>View Similar Work</button></a>
       </motion.div>
     </motion.div>
   </motion.div>

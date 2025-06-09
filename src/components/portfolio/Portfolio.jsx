@@ -47,8 +47,11 @@ const Single = ({ item }) => {
 
   const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
+  // Convert title to id-friendly format
+  const sectionId = item.title.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-');
+
   return (
-    <section >
+    <section id={`portfolio-${item.id}`}> {/* <== add id here */}
       <div className="container">
         <div className="wrapper">
           <div className="imageContainer" ref={ref}>
@@ -64,9 +67,9 @@ const Single = ({ item }) => {
               const hasHalfStar = item.rating % 1 >= 0.25 && item.rating % 1 <= 0.75;
               const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
               const full = "★".repeat(fullStars);
-              const half = hasHalfStar ? "⯨" : ""; // Your preferred half star symbol
+              const half = hasHalfStar ? "⯨" : "";
               const empty = "☆".repeat(emptyStars);
-              
+
               return (
                 <p style={{ marginTop: "10px", fontStyle: "italic" }}>
                   Rating ({item.rating}/5): {full}{half}{empty}
@@ -79,6 +82,7 @@ const Single = ({ item }) => {
     </section>
   );
 };
+
 
 const Portfolio = () => {
   const ref = useRef();
